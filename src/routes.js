@@ -9,7 +9,8 @@ import Login from './pages/Login';
 import NotFound from './pages/Page404';
 import Register from './pages/Register';
 import Products from './pages/Products';
-import DashboardApp from './pages/DashboardApp';
+// import DashboardApp from './pages/DashboardApp';
+import Landing from './pages/Landing';
 
 // ----------------------------------------------------------------------
 
@@ -17,9 +18,9 @@ export default function Router() {
   return useRoutes([
     {
       path: '/dashboard',
-      element: <DashboardLayout />,
+      element: <Landing />,
       children: [
-        { path: 'app', element: <DashboardApp /> },
+        { path: 'app', element: <DashboardLayout /> },
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
