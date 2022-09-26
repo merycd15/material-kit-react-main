@@ -2,20 +2,22 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 // import CameraIcon from '@mui/icons-material/PhotoCamera';
-import Card from '@mui/material/Card';
+// import Card from '@mui/material/Card';
 // import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
+import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 // import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import CardActionArea from '@mui/material/CardActionArea'
 
 
 function Copyright() {
@@ -31,7 +33,16 @@ function Copyright() {
   );
 }
 
-const cards = [1,2,3];
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(5),
+  textAlign: 'center',
+  justifyContent:'center',
+  color: theme.palette.text.secondary,
+}));
+
+
 
 const theme = createTheme();
 
@@ -74,38 +85,60 @@ export default function Landing() {
                 </Typography>
             </Container>
         </Box>
-        <Container sx={{ py: 2}} maxWidth="md">
-          {/* End hero unit */}
-          {/* Estoy modificando sobre esta -MERY-*/}
-          <Typography
-              variant="h4"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              Profes
-            </Typography>
-            <Grid container spacing={4}>
-                {cards.map((card) => (
-                <Grid item key={card} xs={12} sm={6} md={4}>
-                    <Card
-                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                    >
-                    <CardContent>
-                        <Typography variant="h4" component="h2" textAlign={"center"}>
-                        1
-                        </Typography>
-                        <br />
-                        <Typography gutterBottom variant="h4" component="h2" textAlign={"center"}>
-                        Heading
-                        </Typography>
-                    </CardContent>
-                    </Card>
-                </Grid>
-                ))}
+        <Container sx={{ py: 4}} maxWidth="md">
+          {/* End hero unit */}         
+          <Grid container spacing={4}>
+            <Grid item xs={12} sm={6} md={4}>
+              <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardActionArea>
+                  <CardContent>
+                    <Typography gutterBottom variant="h4">
+                      Registrate Inscribite
+                    </Typography>
+                    <CardMedia
+                      component="img"
+                      image="../favicon/number1icon.png"
+                      alt="paso1"
+                    />
+                  </CardContent>
+                </CardActionArea>
+              </Item>
             </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography gutterBottom variant="h4" component="div">
+                        Agrega cursos
+                      </Typography>
+                      <CardMedia
+                      component="img"
+                      image="../favicon/number2icon.png"
+                      alt="paso2"
+                      />
+                    </CardContent>
+                    
+                  </CardActionArea>
+              </Item>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography gutterBottom variant="h4" component="div">
+                        Enseña Aprende!
+                      </Typography>
+                      <CardMedia
+                      component="img"
+                      image="../favicon/number3icon.png"
+                      alt="paso3"
+                    />
+                    </CardContent>
+                  </CardActionArea>
+              </Item>
+            </Grid>
+          </Grid>
         </Container>
-        
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
