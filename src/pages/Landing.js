@@ -1,14 +1,10 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-// import CameraIcon from '@mui/icons-material/PhotoCamera';
-// import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-// import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,7 +13,10 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import CardActionArea from '@mui/material/CardActionArea'
+import CardActionArea from '@mui/material/CardActionArea';
+// import ScrollToTop from '../components/ScrollToTop';
+// import { BaseOptionChartStyle } from '../components/chart/BaseOptionChart';
+// import Router from '../routes';
 
 
 function Copyright() {
@@ -25,10 +24,11 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        GoStudy
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
+      {' TODOS LOS DERECHOS RESERVADOS.'}
     </Typography>
   );
 }
@@ -49,6 +49,7 @@ const theme = createTheme();
 export default function Landing() {
   return (
     <ThemeProvider theme={theme}>
+    
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
@@ -125,7 +126,7 @@ export default function Landing() {
               <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                   <CardActionArea>
                     <CardContent>
-                      <Typography gutterBottom variant="h4" component="div">
+                      <Typography gutterBottom variant="h4" component="div" align="center">
                         Enseña Aprende!
                       </Typography>
                       <CardMedia
@@ -143,7 +144,7 @@ export default function Landing() {
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Aprende con GoStudy
         </Typography>
         <Typography
           variant="subtitle1"
@@ -151,7 +152,7 @@ export default function Landing() {
           color="text.secondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Las fotos contenidas en este site, el logotipo y las marcas son propiedad de GoStudy y/o de sus respectivos titulares. Está prohibida la reproducción total o parcial, sin la expresa autorización de la administración.
         </Typography>
         <Copyright />
       </Box>
