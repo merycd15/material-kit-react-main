@@ -1,16 +1,14 @@
 import { Navigate, useRoutes } from 'react-router-dom';
-// layouts
 import DashboardLayout from './layouts/dashboard';
-import LogoOnlyLayout from './layouts/LogoOnlyLayout';
-//
 import Blog from './pages/Blog';
 import User from './pages/User';
 import Login from './pages/Login';
-import NotFound from './pages/Page404';
 import Register from './pages/Register';
 import Products from './pages/Products';
-// import Landing from './pages/Landing';
+import Landing from './pages/Landing';
 import DashboardApp from './pages/DashboardApp';
+import Page404 from './pages/Page404';
+import ForgotPassword from './pages/ForgotPassword';
 
 // ----------------------------------------------------------------------
 
@@ -36,12 +34,18 @@ export default function Router() {
       element: <Register />,
     },
     {
+      path: 'forgotPassword',
+      element: <ForgotPassword />,
+    },
+    {
+    path: '/404',
+    element: <Page404 />,
+    },
+    {
       path: '/',
-      element: <LogoOnlyLayout />,
+      element: <Landing  />,
       children: [
-        { path: '/', element: <Navigate to="/dashboard/app" /> },
-        { path: '404', element: <NotFound /> },
-        { path: '*', element: <Navigate to="/404" /> },
+        { path: '/', element: <Navigate to="/landing" /> },
       ],
     },
     {

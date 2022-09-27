@@ -49,16 +49,15 @@ const theme = createTheme();
 export default function Landing() {
   return (
     <ThemeProvider theme={theme}>
-    
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="sticky" >
         <Toolbar>
             <ButtonGroup
                 variant="contained"
                 aria-label="outlined primary button group"
                 >
-                <Button>Login</Button>
-                <Button>Register</Button>
+                <Button href="/login">Login </Button>
+                <Button href="/register">Register</Button>
             </ButtonGroup>
         </Toolbar>
       </AppBar>

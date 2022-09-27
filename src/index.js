@@ -6,10 +6,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 //
-// import App from './App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
-import Landing from './pages/Landing';
+// import Landing from './pages/Landing';
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HelmetProvider>
     <BrowserRouter>
-      <Landing />
+      <App />
     </BrowserRouter>
   </HelmetProvider>
 );
