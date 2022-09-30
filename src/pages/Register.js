@@ -68,7 +68,7 @@ export default function Register() {
           <Logo />
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-              Already have an account? {''}
+              Ya tenés una cuenta? {''}
               <Link variant="subtitle2" component={RouterLink} to="/login">
                 Login
               </Link>
@@ -79,7 +79,7 @@ export default function Register() {
         {mdUp && (
           <SectionStyle>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Manage the job more effectively with Minimal
+              Administra tus cursos de forma mas efectiva con GoStudy
             </Typography>
             <img alt="register" src="/static/illustrations/illustration_register.png" />
           </SectionStyle>
@@ -88,30 +88,30 @@ export default function Register() {
         <Container>
           <ContentStyle>
             <Typography variant="h4" gutterBottom>
-              Get started absolutely free.
+              Comencemos totalmente Gratis.
             </Typography>
 
-            <Typography sx={{ color: 'text.secondary', mb: 5 }}>Free forever. No credit card needed.</Typography>
+            <Typography sx={{ color: 'text.secondary', mb: 5 }}>Gratis por siempre. No necesitas una tarjeta de crédito.</Typography>
 
             <AuthSocial />
 
             <RegisterForm />
 
             <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
-              By registering, I agree to Minimal&nbsp;
+              Registrandote, estás de acuerdo con GoStudy&nbsp;
               <Link underline="always" color="text.primary" href="#">
-                Terms of Service
+                Términos del servicio 
               </Link>
-              {''}and{''}
+              {''} y {''}
               <Link underline="always" color="text.primary" href="#">
-                Privacy Policy
+                 Política de Privacidad
               </Link>
               .
             </Typography>
 
             {!smUp && (
               <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>
-                Already have an account?{' '}
+                Ya tenés una cuenta?{' '}
                 <Link variant="subtitle2" to="/login" component={RouterLink}>
                   Login
                 </Link>

@@ -10,6 +10,34 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@angular/common@14.2.4":
+  "integrity" "sha512-nzmRUhdyKomgsf1vUdx7KOXS7OXkvdpF/1CSagqsIGYVLbL8cGZ6ROrdEuxkSsE9GUt/OAIkC4How4/LLPut1A=="
+  "resolved" "https://registry.npmjs.org/@angular/common/-/common-14.2.4.tgz"
+  "version" "14.2.4"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"@angular/core@14.2.4":
+  "integrity" "sha512-wB19wKmZE+X07mLbxYyqeg3v1JXy8m0+ShZD2oY3dmgk1mXOf5XVQxRZohGTrbPw83EdSWwx3vz+jjylGunVZQ=="
+  "resolved" "https://registry.npmjs.org/@angular/core/-/core-14.2.4.tgz"
+  "version" "14.2.4"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"@angular/platform-browser@14.2.4":
+  "integrity" "sha512-/NAQXYLgyeb2L15EsaKgGEn50GH/O3t1FOjBvVZg6L423X0H6dIOL4bxbLcKAj9+bUDtdUzDiDoYyt6YEidH+g=="
+  "resolved" "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-14.2.4.tgz"
+  "version" "14.2.4"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"@angular/router@^14.2.4":
+  "integrity" "sha512-zjsiy/1zrZfZnfIbo2vVgZ+UhCo3okabVr43eIvJhBwcNKzM8Zv17oN9FFlWvSzKKkbsoNIgJkTI85L1YsKtjg=="
+  "resolved" "https://registry.npmjs.org/@angular/router/-/router-14.2.4.tgz"
+  "version" "14.2.4"
+  dependencies:
+    "tslib" "^2.3.0"
+
 "@apideck/better-ajv-errors@^0.3.1":
   "integrity" "sha512-P+ZygBLZtkp0qqOAJJVX4oX/sFo5JR3eBWwwuqHHhK0GIgQOKWrAfiAaWX0aArHkRWHMuggFEgAZNxVPwPZYaA=="
   "resolved" "https://registry.npmjs.org/@apideck/better-ajv-errors/-/better-ajv-errors-0.3.6.tgz"
@@ -8051,6 +8079,13 @@
   dependencies:
     "queue-microtask" "^1.2.2"
 
+"rxjs@^6.5.3 || ^7.4.0":
+  "integrity" "sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA=="
+  "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.5.7.tgz"
+  "version" "7.5.7"
+  dependencies:
+    "tslib" "^2.1.0"
+
 "safe-buffer@^5.1.0", "safe-buffer@>=5.1.0", "safe-buffer@~5.1.0", "safe-buffer@~5.1.1", "safe-buffer@5.1.2":
   "integrity" "sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g=="
   "resolved" "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz"
@@ -8917,7 +8952,7 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2.0.3":
+"tslib@^2.0.3", "tslib@^2.1.0", "tslib@^2.3.0":
   "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   "version" "2.4.0"
@@ -9619,3 +9654,10 @@
     "nanoclone" "^0.2.1"
     "property-expr" "^2.0.4"
     "toposort" "^2.0.2"
+
+"zone.js@~0.11.4":
+  "integrity" "sha512-82bctBg2hKcEJ21humWIkXRlLBBmrc3nN7DFh5LGGhcyycO2S7FN8NmdvlcKaGFDNVL4/9kFLmwmInTavdJERA=="
+  "resolved" "https://registry.npmjs.org/zone.js/-/zone.js-0.11.8.tgz"
+  "version" "0.11.8"
+  dependencies:
+    "tslib" "^2.3.0"

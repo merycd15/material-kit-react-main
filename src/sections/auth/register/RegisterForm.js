@@ -14,6 +14,10 @@ import { FormProvider, RHFTextField } from '../../../components/hook-form';
 // ----------------------------------------------------------------------
 
 export default function RegisterForm() {
+  
+
+
+  
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -23,13 +27,15 @@ export default function RegisterForm() {
     lastName: Yup.string().required('Last name required'),
     email: Yup.string().email('Email must be a valid email address').required('Email is required'),
     password: Yup.string().required('Password is required'),
+    rol: Yup.string().required('Rol is required'),
   });
+
 
   const defaultValues = {
     firstName: '',
     lastName: '',
     email: '',
-    password: '',
+    password: ''
   };
 
   const methods = useForm({
@@ -50,15 +56,19 @@ export default function RegisterForm() {
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <RHFTextField name="firstName" label="First name" />
-          <RHFTextField name="lastName" label="Last name" />
+          <RHFTextField name="firstName" label="Nombre" />
+          <RHFTextField name="lastName" label="Apellido" />
+          <RHFTextField name="rol" label="Rol" />
         </Stack>
+      
+  
 
-        <RHFTextField name="email" label="Email address" />
+        <RHFTextField name="email" label="Correo electrónico" />
+
 
         <RHFTextField
           name="password"
-          label="Password"
+          label="Contraseña"
           type={showPassword ? 'text' : 'password'}
           InputProps={{
             endAdornment: (
@@ -77,4 +87,7 @@ export default function RegisterForm() {
       </Stack>
     </FormProvider>
   );
+
+  
 }
+
