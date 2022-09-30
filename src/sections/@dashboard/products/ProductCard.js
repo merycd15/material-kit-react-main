@@ -4,10 +4,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Card, Link, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // utils
+import Button from '@mui/material/Button';
 import { fCurrency } from '../../../utils/formatNumber';
 // components
 import Label from '../../../components/Label';
-import { ColorPreview } from '../../../components/color-utils';
+// import { ColorPreview } from '../../../components/color-utils';
+
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +28,7 @@ ShopProductCard.propTypes = {
 };
 
 export default function ShopProductCard({ product }) {
-  const { name, cover, price, colors, status, priceSale } = product;
+  const { name, cover, price, status } = product;
 
   return (
     <Card>
@@ -57,21 +59,12 @@ export default function ShopProductCard({ product }) {
         </Link>
 
         <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <ColorPreview colors={colors} />
+       
           <Typography variant="subtitle1">
-            <Typography
-              component="span"
-              variant="body1"
-              sx={{
-                color: 'text.disabled',
-                textDecoration: 'line-through',
-              }}
-            >
-              {priceSale && fCurrency(priceSale)}
-            </Typography>
-            &nbsp;
             {fCurrency(price)}
           </Typography>
+          <Button href="/curso">Agregar </Button>
+
         </Stack>
       </Stack>
     </Card>

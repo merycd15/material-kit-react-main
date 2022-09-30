@@ -26,7 +26,7 @@ export default function RegisterForm() {
     firstName: Yup.string().required('First name required'),
     lastName: Yup.string().required('Last name required'),
     email: Yup.string().email('Email must be a valid email address').required('Email is required'),
-    password: Yup.string().required('Password is required'),
+    password: Yup.string().required('Password is required').min(8, 'Your password is too short.'),
     rol: Yup.string().required('Rol is required'),
   });
 
@@ -60,8 +60,6 @@ export default function RegisterForm() {
           <RHFTextField name="lastName" label="Apellido" />
           <RHFTextField name="rol" label="Rol" />
         </Stack>
-      
-  
 
         <RHFTextField name="email" label="Correo electrónico" />
 
