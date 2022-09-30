@@ -51,10 +51,10 @@ export default function DashboardApp() {
           <Grid container spacing={5}>
               <Grid item xs={12} sm={6} md={4}>
                 <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardActionArea href="/dashboard/cursos">
+                  <CardActionArea href="/dashboard/CursosAlumno">
                     <CardContent>
                       <Typography variant="h4" sx={{ mb: 2 }}>
-                        Agregar curso
+                        Agregar curso alumno
                       </Typography>
                       <CardMedia
                         component="img"
@@ -66,7 +66,27 @@ export default function DashboardApp() {
                 </Item>
               </Grid>
             </Grid>
-          </Container>       
+          </Container>      
+          <Container sx={{ py: 4}} maxWidth="sm"> 
+          <Grid container spacing={5}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <CardActionArea href="/CursoProfesor">
+                    <CardContent>
+                      <Typography variant="h4" sx={{ mb: 2 }}>
+                        Agregar curso Profesor
+                      </Typography>
+                      <CardMedia
+                        component="img"
+                        image="../favicon/add-icon.jpg"
+                        alt="paso1"
+                      />
+                    </CardContent>
+                  </CardActionArea>
+                </Item>
+              </Grid>
+            </Grid>
+          </Container>   
     </Page>
   );
 }

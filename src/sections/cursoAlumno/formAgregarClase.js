@@ -11,7 +11,7 @@ import { FormProvider, RHFTextField } from '../../components/hook-form';
 
 // ----------------------------------------------------------------------
 
-export default function FormClase() {
+export default function FormAgregarClase() {
   const navigate = useNavigate();
 
   const RegisterSchema = Yup.object().shape({
@@ -24,19 +24,20 @@ export default function FormClase() {
     duracionClass: Yup.string().required('Duración del curso requerido'),
     frecuenciaClass: Yup.string().required('Nombre del curso requerido'),       
     costoClass: Yup.string().required('Nombre del curso requerido'),
+    comentariosClass: Yup.string().required('Comentarios del curso requerido'),
   });
 
   const defaultValues = {
-    nameClass: '',
-    descriptionClass: '',
-    valoracionClass: '',
-    nameProfesor: '',
-    lastNameProfesor: '', 
-    experienciasProfesor: '',
-    duracionClass: '',
-    frecuenciaClass: '',       
-    costoClass: '',
-    comentariosClass: '',
+    nameClass: 'Matemáticas I',
+    descriptionClass: 'Matemática básica',
+    valoracionClass: '5 estrellas',
+    nameProfesor: 'Micaela',
+    lastNameProfesor: 'Rimoldi', 
+    experienciasProfesor: 'Dictó clases en UADE y UCA',
+    duracionClass: '4 meses',
+    frecuenciaClass: '2 veces por semana',       
+    costoClass: '$25',
+    comentariosClass: 'Excelente curso!',
   };
 
   const methods = useForm({
@@ -50,7 +51,7 @@ export default function FormClase() {
   } = methods;
 
   const onSubmit = async () => {
-    navigate('/dashboard/CursosProfesor', { replace: true });
+    navigate('/CursoAlumnoContratar', { replace: true });
   };
 
   return (
@@ -68,7 +69,7 @@ export default function FormClase() {
           <RHFTextField name="comentariosClass" label="Comentarios Clase" />
 
         <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
-          Publicar
+          Contratá
         </LoadingButton>
       </Stack>
     </FormProvider>

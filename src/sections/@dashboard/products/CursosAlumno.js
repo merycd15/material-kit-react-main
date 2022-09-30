@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 // material
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Box, Card, Link, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // utils
@@ -63,7 +64,9 @@ export default function ShopProductCard({ product }) {
           <Typography variant="subtitle1">
             {fCurrency(price)}
           </Typography>
-          <Button href="/curso">Agregar </Button>
+          <Button href="/CursoAlumno" variant="outlined" color="info" startIcon={<AddCircleIcon />}>
+            Agregar
+          </Button>
 
         </Stack>
       </Stack>

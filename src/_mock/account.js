@@ -2,7 +2,7 @@
 
 const account = {
   displayName: 'Don Barredora',
-  email: 'Barredora@live.com',
+  email: 'Barredora@',
   photoURL: '/static/mock-images/avatars/avatar_default.jpg',
 };
 

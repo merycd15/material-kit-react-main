@@ -1,4 +1,3 @@
-import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
 import { Card, Link, Container, Typography } from '@mui/material';
@@ -8,7 +7,7 @@ import useResponsive from '../hooks/useResponsive';
 import Page from '../components/Page';
 import Logo from '../components/Logo';
 // sections
-import { FormClase } from '../sections/cursos';
+import { FormContratarClase } from '../sections/cursoAlumnoContratar';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
@@ -55,8 +54,6 @@ const ContentStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function Register() {
-  const smUp = useResponsive('up', 'sm');
-
   const mdUp = useResponsive('up', 'md');
 
   return (
@@ -64,14 +61,6 @@ export default function Register() {
       <RootStyle>
         <HeaderStyle>
           <Logo />
-          {smUp && (
-            <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-              Ya tenés una cuenta? {''}
-              <Link variant="subtitle2" component={RouterLink} to="/login">
-                Login
-              </Link>
-            </Typography>
-          )}
         </HeaderStyle>
 
         {mdUp && (
@@ -86,15 +75,15 @@ export default function Register() {
         <Container>
           <ContentStyle>
             <Typography variant="h4" gutterBottom>
-              Comencemos totalmente Gratis.
+              Comencemos.
             </Typography>
 
-            <Typography sx={{ color: 'text.secondary', mb: 5 }}>Gratis por siempre. No necesitas una tarjeta de crédito.</Typography>
+            <Typography sx={{ color: 'text.secondary', mb: 5 }}>Administra tus cursos de forma mas efectiva con GoStudy.</Typography>
 
-            <FormClase />
+            <FormContratarClase />
 
             <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
-              Registrandote, estás de acuerdo con GoStudy&nbsp;
+              Registrando el curso, estás de acuerdo con GoStudy&nbsp;
               <Link underline="always" color="text.primary" href="#">
                 Términos del servicio 
               </Link>
@@ -104,15 +93,6 @@ export default function Register() {
               </Link>
               .
             </Typography>
-
-            {!smUp && (
-              <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>
-                Ya tenés una cuenta?{' '}
-                <Link variant="subtitle2" to="/login" component={RouterLink}>
-                  Login
-                </Link>
-              </Typography>
-            )}
           </ContentStyle>
         </Container>
       </RootStyle>

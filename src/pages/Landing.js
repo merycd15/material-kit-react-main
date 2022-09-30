@@ -1,4 +1,5 @@
 import * as React from 'react';
+import "../css/landing.css";
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CardContent from '@mui/material/CardContent';
@@ -13,7 +14,7 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import CardActionArea from '@mui/material/CardActionArea';
+// import CardActionArea from '@mui/material/CardActionArea';
 // import ScrollToTop from '../components/ScrollToTop';
 // import { BaseOptionChartStyle } from '../components/chart/BaseOptionChart';
 // import Router from '../routes';
@@ -61,11 +62,11 @@ export default function Landing() {
             </ButtonGroup>
         </Toolbar>
       </AppBar>
-      <main>
+      <main className='landing-class'>
         {/* Hero unit */}
         <Box
           sx={{
-            bgcolor: 'background.paper',
+            // bgcolor: 'background.paper',
             pt: 8,
             pb: 6,
           }}
@@ -78,7 +79,7 @@ export default function Landing() {
                 color="text.primary"
                 gutterBottom
                 >
-                GoStudy
+                <b> GoStudy </b>
                 </Typography>
                 <Typography variant="h5" align="center" color="text.secondary" paragraph>
                 Esta app está pensada para que todos puedan enseñar o aprender dependiendo de las preferencias de cada uno.
@@ -90,7 +91,7 @@ export default function Landing() {
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={4}>
               <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <CardActionArea>
+                
                   <CardContent>
                     <Typography gutterBottom variant="h4">
                       Registrate Inscribite
@@ -101,12 +102,12 @@ export default function Landing() {
                       alt="paso1"
                     />
                   </CardContent>
-                </CardActionArea>
+                
               </Item>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardActionArea>
+                  
                     <CardContent>
                       <Typography gutterBottom variant="h4" component="div">
                         Agrega cursos
@@ -118,12 +119,11 @@ export default function Landing() {
                       />
                     </CardContent>
                     
-                  </CardActionArea>
               </Item>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <Item sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardActionArea>
+                 
                     <CardContent>
                       <Typography gutterBottom variant="h4" component="div" align="center">
                         Enseña Aprende!
@@ -134,7 +134,7 @@ export default function Landing() {
                       alt="paso3"
                     />
                     </CardContent>
-                  </CardActionArea>
+                  
               </Item>
             </Grid>
           </Grid>

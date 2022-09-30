@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
+import * as React from 'react';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 import { Stack, IconButton, InputAdornment } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // components
@@ -14,10 +17,10 @@ import { FormProvider, RHFTextField } from '../../../components/hook-form';
 // ----------------------------------------------------------------------
 
 export default function RegisterForm() {
-  
-
-
-  
+  const Roles = [
+    { label: 'Alumno' },
+    { label: 'Profesor'},
+  ];
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -27,7 +30,7 @@ export default function RegisterForm() {
     lastName: Yup.string().required('Last name required'),
     email: Yup.string().email('Email must be a valid email address').required('Email is required'),
     password: Yup.string().required('Password is required').min(8, 'Your password is too short.'),
-    rol: Yup.string().required('Rol is required'),
+
   });
 
 
@@ -49,7 +52,7 @@ export default function RegisterForm() {
   } = methods;
 
   const onSubmit = async () => {
-    navigate('/dashboard', { replace: true });
+    navigate('/login', { replace: true });
   };
 
   return (
@@ -58,7 +61,14 @@ export default function RegisterForm() {
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
           <RHFTextField name="firstName" label="Nombre" />
           <RHFTextField name="lastName" label="Apellido" />
-          <RHFTextField name="rol" label="Rol" />
+          <Autocomplete
+      disablePortal
+      id="rol"
+      options={Roles}
+      sx={{ width: 300 }}
+      renderInput={(params) => <TextField {...params} label="Rol" />}
+    />
+            
         </Stack>
 
         <RHFTextField name="email" label="Correo electrónico" />

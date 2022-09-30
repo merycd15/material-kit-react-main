@@ -1,14 +1,13 @@
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 // material
+import Box from '@mui/material/Box';
 import {
   Card,
   Table,
   Stack,
   Avatar,
-  Button,
   Checkbox,
   TableRow,
   TableBody,
@@ -19,24 +18,26 @@ import {
   TablePagination,
 } from '@mui/material';
 // components
+import { FormClaseComentarios } from '../sections/cursosComentarios';
 import Page from '../components/Page';
 import Label from '../components/Label';
 import Scrollbar from '../components/Scrollbar';
-import Iconify from '../components/Iconify';
 import SearchNotFound from '../components/SearchNotFound';
 import { UserListHead, UserListToolbar, UserMoreMenu } from '../sections/@dashboard/user';
 // mock
-import USERLIST from '../_mock/user';
+import USERLIST from '../_mock/userProfesor';
+
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
-  { id: 'status', label: 'Status', alignRight: false },
-  { id: '' },
+  { id: 'name', label: 'NombreAlumno', alignRight: false },
+  { id: 'role', label: 'Curso', alignRight: false },
+  { id: 'motivo', label: 'Motivo', alignRight: false },
+  { id: 'mail', label: 'Mail', alignRight: false },
+  { id: 'telefono', label: 'Telefono', alignRight: false },
+  { id: 'horario', label: 'HorarioPref', alignRight: false },
+  { id: 'status', label: 'Estado', alignRight: false },
 ];
 
 // ----------------------------------------------------------------------
@@ -133,15 +134,12 @@ export default function User() {
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
-    <Page title="User">
+    <Page title="Solicitudes">
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            User
+          Solicitudes
           </Typography>
-          <Button variant="contained" component={RouterLink} to="#" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
-          </Button>
         </Stack>
 
         <Card>
@@ -161,7 +159,7 @@ export default function User() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, role, status, company, avatarUrl, isVerified } = row;
+                    const { id, name, role, status, avatarUrl,motivo, mail,telefono,horario } = row;
                     const isItemSelected = selected.indexOf(name) !== -1;
 
                     return (
@@ -184,11 +182,13 @@ export default function User() {
                             </Typography>
                           </Stack>
                         </TableCell>
-                        <TableCell align="left">{company}</TableCell>
                         <TableCell align="left">{role}</TableCell>
-                        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+                        <TableCell align="left">{motivo}</TableCell>
+                        <TableCell align="left">{mail}</TableCell>
+                        <TableCell align="left">{telefono}</TableCell>
+                        <TableCell align="left">{horario}</TableCell>
                         <TableCell align="left">
-                          <Label variant="ghost" color={(status === 'banned' && 'error') || 'success'}>
+                          <Label variant="ghost" color={(status === 'Cancelado' && 'error') || (status === 'Solicitado' && 'warning')||(status === 'Finalizado' && 'info')||(status === 'Aceptado' && 'success')}>
                             {sentenceCase(status)}
                           </Label>
                         </TableCell>
@@ -230,6 +230,8 @@ export default function User() {
           />
         </Card>
       </Container>
+      <Box sx={{ m: 10 }} /> 
+      <FormClaseComentarios/>
     </Page>
   );
 }
