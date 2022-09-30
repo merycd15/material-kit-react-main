@@ -1,10 +1,10 @@
 import { Navigate, useRoutes } from 'react-router-dom';
 import DashboardLayout from './layouts/dashboard';
 import Blog from './pages/Blog';
-import User from './pages/User';
+import Perfil from './pages/Perfil';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Products from './pages/Products';
+import Cursos from './pages/Cursos';
 import Landing from './pages/Landing';
 import DashboardApp from './pages/DashboardApp';
 import Page404 from './pages/Page404';
@@ -19,9 +19,9 @@ export default function Router() {
       path: '/dashboard',
       element: <DashboardLayout />,
       children: [
-        { path: 'app', element: <DashboardApp /> },
-        { path: 'user', element: <User /> },
-        { path: 'products', element: <Products /> },
+        { path: 'home', element: <DashboardApp /> },
+        { path: 'perfil', element: <Perfil /> },
+        { path: 'cursos', element: <Cursos /> },
         { path: 'blog', element: <Blog /> },
       ],
     },
